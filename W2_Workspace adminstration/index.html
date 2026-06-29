@@ -627,6 +627,32 @@ const QUESTIONS = [
       </table>
     `
   }
+  ,
+  {
+    id: 12,
+    category: "Workspace Settings",
+    text: "You are a Workspace Admin. Your company is planning to launch a new initiative and the project team has decided to create a new Slack workspace to collaborate. Each member of the workspace will have access to sensitive information, therefore you want to manage workspace members carefully. However, the new initiative itself is known and celebrated by the entire company.\n\nHow should you set up the Workspace Access setting in this scenario?",
+    choices: [
+      "Open",
+      "By Request",
+      "Invite Only",
+      "Hidden"
+    ],
+    answer: 1, // By Request
+    explanation: `
+      <p><strong style="color:var(--green)">By Request</strong>가 이 시나리오에 가장 적합합니다.</p>
+      <p style="margin-top:8px">이니셔티브 자체는 회사 전체에 알려져 있으므로 워크스페이스는 검색 가능해야 하지만, 민감한 정보 접근 때문에 멤버 가입을 Admin이 승인해야 합니다.</p>
+      <table>
+        <thead><tr><th>설정</th><th>검색 가능</th><th>가입 방식</th><th>이 시나리오</th></tr></thead>
+        <tbody>
+          <tr><td>Open</td><td><span class="tag-o">✓</span></td><td>누구나 즉시 가입</td><td><span class="tag-x">✗</span> 민감 정보 보호 불가</td></tr>
+          <tr><td><strong>By Request</strong></td><td><span class="tag-o">✓</span></td><td>요청 → Admin 승인</td><td><span class="tag-o">✓</span> 공개성 + 멤버 통제 균형</td></tr>
+          <tr><td>Invite Only</td><td><span class="tag-x">✗</span></td><td>Admin이 직접 초대만</td><td><span class="tag-x">✗</span> 워크스페이스 자체가 비공개</td></tr>
+          <tr><td>Hidden</td><td><span class="tag-x">✗</span></td><td>검색 불가, 초대만</td><td><span class="tag-x">✗</span> 회사 전체가 이니셔티브를 알고 있음</td></tr>
+        </tbody>
+      </table>
+    `
+  }
   /* ── 문제 추가 시 여기에 계속 추가 ── */
 ];
 
