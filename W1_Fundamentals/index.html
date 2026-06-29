@@ -619,6 +619,31 @@ const QUESTIONS = [
       </table>
     `
   }
+  ,
+  {
+    id: 10,
+    category: "Slack Best Practices",
+    text: "You are a Workspace Admin looking to streamline help requests in Slack. You currently receive these requests through direct messages from individual members.\n\nWhich of the following options would best help you create a better process for these messages?",
+    choices: [
+      "Advise employees to submit IT service desk tickets for Slack requests.",
+      "Copy and paste requests from direct messages into a Slack post, tagging the appropriate admins.",
+      "Create an admin-only private channel used to communicate support topics, tagging the appropriate admins.",
+      "Create a public channel for admin help, and pin request guidelines to the channel."
+    ],
+    answer: 3,
+    explanation: `
+      <p><strong style="color:var(--green)">Public 채널 생성 + 가이드라인 고정</strong>이 정답입니다. Slack에서 도움 요청을 체계화하는 모범 사례입니다.</p>
+      <table>
+        <thead><tr><th>옵션</th><th>평가</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td>IT 티켓 제출 권유</td><td><span class="tag-x">✗</span></td><td>Slack 외부로 프로세스를 분산시킴</td></tr>
+          <tr><td>DM → 포스트 복붙</td><td><span class="tag-x">✗</span></td><td>수동 작업, 비효율적이고 확장 불가</td></tr>
+          <tr><td>Admin 전용 Private 채널</td><td><span class="tag-x">✗</span></td><td>멤버가 접근할 수 없어 요청 불가</td></tr>
+          <tr><td><strong>Public 채널 + 가이드라인 핀</strong></td><td><span class="tag-o">✓</span></td><td>중앙화·투명성·자기 해결 가능, 확장성 우수</td></tr>
+        </tbody>
+      </table>
+    `
+  }
   /* ── 문제 추가 시 여기에 계속 추가 ── */
 ];
 
