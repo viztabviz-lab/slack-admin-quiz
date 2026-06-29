@@ -593,6 +593,32 @@ const QUESTIONS = [
       </table>
     `
   }
+  ,
+  {
+    id: 9,
+    category: "Slack Roles",
+    text: "You are an Org Admin on Enterprise Grid. You want to allow specific members of your company's facilities and workplace team to invite external guests to Slack.\n\nWhere should you go to allow these members to start inviting guests on Slack?",
+    choices: [
+      "Organization settings",
+      "Workspace settings",
+      "Invite people",
+      "Customize Slack"
+    ],
+    answer: 0,
+    explanation: `
+      <p>Enterprise Grid에서 외부 게스트 초대 권한은 org 레벨 정책이므로 <strong style="color:var(--green)">Organization settings</strong>에서 관리합니다.</p>
+      <p style="margin-top:8px">Org Admin은 Organization settings에서 특정 멤버에게 게스트 초대 권한을 부여할 수 있습니다.</p>
+      <table>
+        <thead><tr><th>옵션</th><th>용도</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Organization settings</strong></td><td>org 전체 정책 관리 — 게스트 초대 권한 포함 <span class="tag-o">✓</span></td></tr>
+          <tr><td>Workspace settings</td><td>개별 워크스페이스 설정 — org 레벨 권한 불가 <span class="tag-x">✗</span></td></tr>
+          <tr><td>Invite people</td><td>직접 초대하는 메뉴 — 권한 부여 아님 <span class="tag-x">✗</span></td></tr>
+          <tr><td>Customize Slack</td><td>UI/테마 커스터마이징 <span class="tag-x">✗</span></td></tr>
+        </tbody>
+      </table>
+    `
+  }
   /* ── 문제 추가 시 여기에 계속 추가 ── */
 ];
 
