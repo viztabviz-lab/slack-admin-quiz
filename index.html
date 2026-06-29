@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slack Admin Certification Quiz</title>
+  <style>
+    :root {
+      --bg: #1a1d21; --surface: #222529; --border: #383a3e;
+      --purple: #611f69; --blue: #36c5f0; --text: #d1d2d3; --text-dim: #7a7f87;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    header {
+      background: var(--purple);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .slack-logo {
+      width: 48px; height: 48px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+      margin: 0 auto 16px;
+    }
+    .slack-logo span { border-radius: 5px; display: block; }
+    .slack-logo span:nth-child(1) { background: #36c5f0; }
+    .slack-logo span:nth-child(2) { background: #2eb67d; }
+    .slack-logo span:nth-child(3) { background: #ecb22e; }
+    .slack-logo span:nth-child(4) { background: #e01e5a; }
+
+    header h1 { font-size: 1.5rem; font-weight: 800; color: #fff; }
+    header p  { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+    .container { max-width: 680px; margin: 40px auto; padding: 0 24px; }
+    h2 { font-size: 0.78rem; font-weight: 700; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+
+    .workshop-grid { display: grid; gap: 14px; }
+    .workshop-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .workshop-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .workshop-card:hover .card-arrow { color: var(--blue); }
+
+    .card-icon {
+      width: 46px; height: 46px;
+      background: linear-gradient(135deg, var(--purple), #9b59b6);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .card-info { flex: 1; }
+    .card-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
+    .card-meta  { font-size: 0.78rem; color: var(--text-dim); }
+    .card-arrow { font-size: 1.1rem; color: var(--border); transition: color 0.2s; }
+
+    .badge {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .badge-new { background: rgba(54,197,240,0.15); color: var(--blue); border: 1px solid var(--blue); }
+    .badge-soon { background: rgba(122,127,135,0.15); color: var(--text-dim); border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="slack-logo">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <h1>Slack Admin Certification</h1>
+  <p>Trailhead 샘플 문제 · 문제해설 뷰어</p>
+</header>
+
+<div class="container">
+  <h2>Workshops</h2>
+  <div class="workshop-grid">
+
+    <a class="workshop-card" href="W1_Fundamentals/index.html">
+      <div class="card-icon">⚡</div>
+      <div class="card-info">
+        <div class="card-title">Workshop 1 · Fundamentals <span class="badge badge-new">NEW</span></div>
+        <div class="card-meta">Slack 플랜, 기본 관리 기능, 기초 개념</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <!-- 추후 워크샵 추가 시 여기에 카드 추가 -->
+    <div class="workshop-card" style="opacity:0.4;cursor:default">
+      <div class="card-icon">🔒</div>
+      <div class="card-info">
+        <div class="card-title">Workshop 2 · Security &amp; Compliance <span class="badge badge-soon">Coming Soon</span></div>
+        <div class="card-meta">보안 정책, 규정 준수, 데이터 관리</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+    <div class="workshop-card" style="opacity:0.4;cursor:default">
+      <div class="card-icon">🔧</div>
+      <div class="card-info">
+        <div class="card-title">Workshop 3 · Advanced Administration <span class="badge badge-soon">Coming Soon</span></div>
+        <div class="card-meta">고급 관리 기능, 자동화, 인증</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
