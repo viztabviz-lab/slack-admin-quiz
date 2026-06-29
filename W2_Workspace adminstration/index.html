@@ -653,6 +653,136 @@ const QUESTIONS = [
       </table>
     `
   }
+  ,
+  {
+    id: 13,
+    category: "Slack API",
+    text: "Which of the following workspace management tasks can not be accomplished via Slack API?",
+    choices: [
+      "Create a workspace",
+      "Send a confirmation message to the requestor of a workspace",
+      "Invite members to a workspace",
+      "Set users' notification settings in the workspace"
+    ],
+    answer: 3,
+    explanation: `
+      <p><strong style="color:var(--red)">Set users' notification settings</strong>은 Slack API로 처리할 수 없습니다.</p>
+      <p style="margin-top:8px">알림 설정은 각 사용자의 개인 환경설정이므로 Admin이 API를 통해 일괄 변경할 수 없습니다.</p>
+      <table>
+        <thead><tr><th>작업</th><th>API 가능?</th></tr></thead>
+        <tbody>
+          <tr><td>Create a workspace</td><td><span class="tag-o">✓</span> admin.teams.create</td></tr>
+          <tr><td>Send a confirmation message</td><td><span class="tag-o">✓</span> chat.postMessage 등</td></tr>
+          <tr><td>Invite members to a workspace</td><td><span class="tag-o">✓</span> admin.users.invite</td></tr>
+          <tr><td><strong>Set users' notification settings</strong></td><td><span class="tag-x">✗</span> 개인 설정 — API 변경 불가</td></tr>
+        </tbody>
+      </table>
+    `
+  }
+  ,
+  {
+    id: 14,
+    category: "Domain Management",
+    text: "How can you prevent employees from using company email addresses to create new workspaces outside of your existing Slack Enterprise Grid org?",
+    choices: [
+      "Approve company-owned Slack workspaces using an SSL proxy within your corporate network.",
+      "Set up SAML-based single sign-on (SSO) for authentication.",
+      "Contact Slack to add Enterprise Key Management (EKM) to your Slack Enterprise Grid plan.",
+      "Contact Slack to claim your company's email domain(s) for your Slack Enterprise Grid org."
+    ],
+    answer: 3,
+    explanation: `
+      <p><strong style="color:var(--green)">이메일 도메인 클레임(Domain Claiming)</strong>이 정답입니다.</p>
+      <p style="margin-top:8px">Slack에 회사 이메일 도메인을 클레임하면, 해당 도메인 주소로는 Enterprise Grid org 밖에서 새 워크스페이스를 만들 수 없게 됩니다.</p>
+      <table>
+        <thead><tr><th>옵션</th><th>평가</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td>SSL proxy</td><td><span class="tag-x">✗</span></td><td>워크스페이스 생성 자체를 막지 못함</td></tr>
+          <tr><td>SAML SSO</td><td><span class="tag-x">✗</span></td><td>인증 방식이지 도메인 보호 아님</td></tr>
+          <tr><td>EKM</td><td><span class="tag-x">✗</span></td><td>암호화 키 관리 기능, 도메인과 무관</td></tr>
+          <tr><td><strong>Domain Claiming</strong></td><td><span class="tag-o">✓</span></td><td>해당 도메인으로 외부 워크스페이스 생성 차단</td></tr>
+        </tbody>
+      </table>
+    `
+  }
+  ,
+  {
+    id: 15,
+    category: "Domain Management",
+    text: "Which of the following are not benefits of claiming domains for your Enterprise Grid org? Select the two correct responses.",
+    choices: [
+      "Streamline member requests for guests.",
+      "Make your org's connected workspaces easier to find.",
+      "Prevent people from creating unsanctioned workspaces outside of your org.",
+      "Allow people with email addresses in specific domains to join your org.",
+      "Allow Org Owners to restrict member usage on mobile devices."
+    ],
+    answers: [0, 4],
+    explanation: `
+      <p><strong style="color:var(--red)">A (게스트 요청 간소화)</strong>와 <strong style="color:var(--red)">E (모바일 사용 제한)</strong>은 도메인 클레임의 혜택이 아닙니다.</p>
+      <table>
+        <thead><tr><th>항목</th><th>도메인 클레임 혜택?</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td>A. Streamline guest requests</td><td><span class="tag-x">✗ 아님</span></td><td>도메인 클레임은 멤버 대상, 게스트 요청과 무관</td></tr>
+          <tr><td>B. Workspaces easier to find</td><td><span class="tag-o">✓ 혜택</span></td><td>클레임된 도메인 사용자에게 org 워크스페이스 노출</td></tr>
+          <tr><td>C. Prevent unsanctioned workspaces</td><td><span class="tag-o">✓ 혜택</span></td><td>해당 도메인으로 외부 워크스페이스 생성 차단</td></tr>
+          <tr><td>D. Allow domain users to join org</td><td><span class="tag-o">✓ 혜택</span></td><td>특정 도메인 이메일로 org 가입 허용</td></tr>
+          <tr><td>E. Restrict mobile device usage</td><td><span class="tag-x">✗ 아님</span></td><td>모바일 제한은 EMM 기능, 도메인 클레임과 무관</td></tr>
+        </tbody>
+      </table>
+    `
+  }
+  ,
+  {
+    id: 16,
+    category: "Workspace Settings",
+    text: "Your company is in the process of acquiring a competitor. Until the legal approvals are complete, no one in the organization should know of the pending acquisition, except for the legal and executive teams.\n\nWhat would be the most secure method of setting up a workspace to handle this sensitive information with a closed group of individuals?",
+    choices: [
+      "Create a private channel and invite only those who are part of the merger.",
+      "Set up a new hidden workspace so that any information related to the merger is kept secure.",
+      "Create a group direct message to share files related to the restructuring processes resulting from this merger.",
+      "Create an invite-only workspace with a description indicating that the contents of the workspace are confidential."
+    ],
+    answer: 1,
+    explanation: `
+      <p><strong style="color:var(--green)">Hidden 워크스페이스</strong>가 가장 보안성이 높은 방법입니다.</p>
+      <p style="margin-top:8px">Hidden 워크스페이스는 검색 결과에 나타나지 않고 초대된 사람만 접근할 수 있어 극비 프로젝트에 최적입니다.</p>
+      <table>
+        <thead><tr><th>옵션</th><th>평가</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td>Private channel</td><td><span class="tag-x">✗</span></td><td>같은 워크스페이스 내 존재 — 채널 목록에 표시될 수 있음</td></tr>
+          <tr><td><strong>Hidden workspace</strong></td><td><span class="tag-o">✓</span></td><td>검색 불가 + 초대만 가능 — 완전한 격리 환경</td></tr>
+          <tr><td>Group DM</td><td><span class="tag-x">✗</span></td><td>파일·기록 관리에 한계, 보안 통제 어려움</td></tr>
+          <tr><td>Invite-only + confidential 설명</td><td><span class="tag-x">✗</span></td><td>설명 자체가 기밀 존재를 노출, Hidden보다 덜 안전</td></tr>
+        </tbody>
+      </table>
+    `
+  }
+  ,
+  {
+    id: 17,
+    category: "Workspace Settings",
+    text: "You are a Workspace Admin at a company that is launching a summer intern program. You've created a \"by request\" workspace on the Enterprise Grid where these interns can collaborate and manage work.\n\nWhat is the benefit of creating a workspace with \"by request\" visibility for this group?",
+    choices: [
+      "A workspace that users can join by request limits admin overhead.",
+      "A workspace that users can join by request enables admins to control membership while still allowing people to see and join the workspace.",
+      "The content of a workspace users can join by request will not appear in any member's search, ensuring the content is never made visible to others at the company.",
+      "A workspace users can join by request allows you to invite Guests, which are not allowed in workspaces that are set to open, invite only, or hidden."
+    ],
+    answer: 1,
+    explanation: `
+      <p><strong style="color:var(--green)">By Request</strong>의 핵심 장점은 <strong>워크스페이스 가시성(검색 가능)을 유지하면서도 Admin이 멤버십을 통제</strong>할 수 있다는 것입니다.</p>
+      <table>
+        <thead><tr><th>선택지</th><th>평가</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td>A. Admin overhead 감소</td><td><span class="tag-x">✗</span></td><td>요청 검토·승인이 필요해 오히려 부담 증가</td></tr>
+          <tr><td><strong>B. 가시성 유지 + 멤버십 통제</strong></td><td><span class="tag-o">✓</span></td><td>검색 가능하지만 가입은 Admin 승인 필요</td></tr>
+          <tr><td>C. 검색에 안 나타남</td><td><span class="tag-x">✗</span></td><td>Hidden 워크스페이스의 특성, By Request는 검색 가능</td></tr>
+          <tr><td>D. Guest 초대 전용</td><td><span class="tag-x">✗</span></td><td>Guest는 모든 워크스페이스 유형에서 초대 가능</td></tr>
+        </tbody>
+      </table>
+    `
+  }
   /* ── 문제 추가 시 여기에 계속 추가 ── */
 ];
 
