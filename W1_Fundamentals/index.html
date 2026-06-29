@@ -644,33 +644,6 @@ const QUESTIONS = [
       </table>
     `
   }
-  ,
-  {
-    id: 11,
-    category: "Slack Roles",
-    text: "You are an Org Primary Owner on Enterprise Grid. Your organization has added many new users over the past few months resulting in an increase in administrative requests such as renaming and archiving public and private channels. You'd like to assign someone to help out.\n\nWhich Slack roles would be best suited to manage these requests? Select the two correct responses.",
-    choices: [
-      "Org Admin",
-      "Channels Admins",
-      "Roles Admin",
-      "Channel Manager",
-      "Users admin"
-    ],
-    answers: [1, 3],
-    explanation: `
-      <p>채널 관리(rename, archive) 권한 위임에 적합한 역할은 <strong style="color:var(--green)">Channels Admins</strong>과 <strong style="color:var(--green)">Channel Manager</strong>입니다.</p>
-      <table>
-        <thead><tr><th>역할</th><th>채널 관리</th><th>설명</th></tr></thead>
-        <tbody>
-          <tr><td>Org Admin</td><td><span class="tag-x">✗</span></td><td>채널 전담 역할이 아님</td></tr>
-          <tr><td><strong>Channels Admins</strong></td><td><span class="tag-o">✓</span></td><td>채널 rename·archive 전담 Admin 역할</td></tr>
-          <tr><td>Roles Admin</td><td><span class="tag-x">✗</span></td><td>커스텀 역할/권한 관리 담당</td></tr>
-          <tr><td><strong>Channel Manager</strong></td><td><span class="tag-o">✓</span></td><td>자동 할당, 일반적인 채널 관리 수행</td></tr>
-          <tr><td>Users admin</td><td><span class="tag-x">✗</span></td><td>사용자 계정 관리 담당</td></tr>
-        </tbody>
-      </table>
-    `
-  }
   /* ── 문제 추가 시 여기에 계속 추가 ── */
 ];
 
